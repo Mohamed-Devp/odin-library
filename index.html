@@ -3,8 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
     <title>Library | The Odin Project</title>
 </head>
 <body class="page">
+    <main class="main page__main">
+        <div class="main__header">
+            <h1 class="main__heading">Library Collection</h1>
+            <button class="btn btn_type_primary" command="show-modal" commandfor="add-book-dialog">
+                <img src="images/add.svg" alt="" class="btn__icon btn__icon_size_sm">
+                Add Book
+            </button>
+        </div>
+        <div class="cards"></div>
+        <dialog id="add-book-dialog" class="dialog">
+            <form method="dialog" class="form">
+                <div class="field">
+                    <label for="title" class="label">Book Title</label>
+                    <input type="text" name="title" id="title" class="inp inp_name_title" required>
+                </div>
+                <div class="field">
+                    <label for="author" class="label">Author</label>
+                    <input type="text" name="author" id="author" class="inp inp_name_author" required>
+                </div>
+                <div class="toggle">
+                    <input type="checkbox" name="read" id="read" class="toggle__btn toggle__btn_name_read">
+                    <label for="read" class="toggle__label toggle__label_size_lg">
+                        I have read this book
+                    </label>
+                </div>
+                <div class="form__actions">
+                    <button type="button" class="btn btn_type_secondary" command="close" commandfor="add-book-dialog">
+                        <img src="images/close.svg" alt="" class="btn__icon btn__icon_size_sm">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn_type_primary">
+                        Add to Library
+                        <img src="images/next.svg" alt="" class="btn__icon btn__icon_size_lg">
+                    </button>
+                </div>
+            </form>
+        </dialog>
+    </main>
 </body>
 </html>

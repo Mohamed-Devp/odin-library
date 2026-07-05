@@ -28,14 +28,26 @@
         <dialog id="add-book-dialog" class="dialog">
             <form method="dialog" class="form">
                 <div class="field">
-                    <label for="title" class="label">Book Title</label>
-                    <input type="text" name="title" id="title" class="inp inp_name_title" required>
+                    <label for="title" class="field__label">Book Title</label>
+                    <input
+                        type="text"
+                        name="title"
+                        id="title"
+                        class="field__inp field__inp_name_title"
+                        required
+                    />
                 </div>
                 <div class="field">
-                    <label for="author" class="label">Author</label>
-                    <input type="text" name="author" id="author" class="inp inp_name_author" required>
+                    <label for="author" class="field__label">Author</label>
+                    <input
+                        type="text"
+                        name="author"
+                        id="author"
+                        class="field__inp field__inp_name_author"
+                        required
+                    />
                 </div>
-                <div class="toggle">
+                <div class="toggle form__toggle">
                     <input type="checkbox" name="read" id="read" class="toggle__btn toggle__btn_name_read">
                     <label for="read" class="toggle__label toggle__label_size_lg">
                         I have read this book
@@ -46,7 +58,7 @@
                         <img src="images/close.svg" alt="" class="btn__icon btn__icon_size_sm">
                         Cancel
                     </button>
-                    <button type="submit" class="btn btn_type_primary">
+                    <button type="submit" class="btn btn_type_submit">
                         Add to Library
                         <img src="images/next.svg" alt="" class="btn__icon btn__icon_size_lg">
                     </button>

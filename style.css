@@ -17,6 +17,7 @@ img, video {
 input, button, textarea, select {
     border: unset;
     font: inherit;
+    background-color: transparent;
 }
 
 a {
@@ -31,6 +32,10 @@ p, label, legend {
     line-height: 1.5;
 }
 
+h1, h2, h3 {
+    line-height: 1.25;
+}
+
 ul, ol {
     list-style-type: none;
 }
@@ -43,4 +48,222 @@ html {
 
 h1, h2, h3 {
     font-family: "Playfair Display", serif;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    appearance: none;
+}
+
+/* || BLOCKS */
+
+.btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn_type_primary {
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: hsl(0 100% 100%);
+    background-color: hsl(214 84% 10%);
+}
+
+.btn_type_secondary {
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.96px;
+    color: hsl(60 2% 36%);
+}
+
+.btn_type_icon {
+    padding: 0.25rem;
+}
+
+.btn_type_submit {
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.96px;
+    color: hsl(0 100% 100%);
+    background-color: hsl(214 84% 10%);
+}
+
+.btn__icon_size_sm {
+    width: 0.75rem;
+}
+
+.btn__icon_size_lg {
+    width: 1rem;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.toggle__btn {
+    --width: 3.5rem;
+    --height: calc(var(--width) * (6 / 11));
+    --spacing: 0.25rem;
+
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    border-radius: calc(var(--height) / 2);
+    background-color: hsl(40 9% 87%);
+    cursor: pointer;
+}
+
+.toggle__btn::before {
+    --diameter: calc(var(--height) - 2 * var(--spacing));
+    content: "";
+    position: absolute;
+    left: var(--spacing); top: var(--spacing);
+    width: var(--diameter);
+    height: var(--diameter);
+    border-radius: 50%;
+    background-color: hsl(0 100% 100%);
+}
+
+.toggle__btn:checked {
+    background-color: hsl(214 84% 10%);
+}
+
+.toggle__btn:checked::before {
+    left: auto; right: var(--spacing);
+}
+
+.toggle__label-sm {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: hsl(227 4% 48%);
+}
+
+.toggle__label-lg {
+    font-size: 1rem;
+    color: hsl(220 6% 28%);
+}
+
+.page {
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+    background-color: hsl(20 27% 98%);
+}
+
+.page__main {
+    display: grid;
+    gap: 4rem;
+}
+
+.main__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.main__heading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: hsl(214 84% 10%);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.card {
+    padding: 1.25rem;
+    border: 1px solid hsl(233 8% 79% / 0.4);
+    background-color: hsl(0 100% 100%);
+    box-shadow: 0 4px 12px hsl(214 84% 10% / 0.08);
+}
+
+.card__title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: hsl(214 84% 10%);
+}
+
+.card__author {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: hsl(220 6% 28%);
+}
+
+.card__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid hsl(233 8% 79% / 0.2);
+    margin-top: 3.5rem;
+}
+
+.dialog {
+    position: fixed;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90%, 42rem);
+    padding: 3rem 1.5rem 1.5rem;
+    border: 1px solid hsl(233 8% 79% / 0.3);
+    background:
+        url("images/book.svg") no-repeat right -20px top -20px / 7rem auto, hsl(0 100% 100%);
+}
+
+.dialog::backdrop {
+    background-color: hsl(0 0% 0% / 0.25);
+}
+
+.form {
+    display: grid;
+    gap: 2rem;
+}
+
+.form__toggle {
+    padding-top: 1rem;
+}
+
+.form__actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    border-top: 1px solid hsl(233 8% 79% / 0.3);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.field__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.96px;
+    color: hsl(60 2% 36%);
+}
+
+.field__inp {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: hsl(60 2% 36%);
+    background-color: hsl(0 4% 89% / 0.3);
 }

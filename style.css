@@ -267,3 +267,29 @@ input[type="checkbox"] {
     color: hsl(60 2% 36%);
     background-color: hsl(0 4% 89% / 0.3);
 }
+
+/* || MEDIA QUERIES */
+
+@media screen and (min-width: 30rem) {
+    .cards {
+        grid-template-columns: repeat(auto-fill, 18rem);
+    }
+}
+
+@media screen and (min-width: 32rem) {
+    .dialog {
+        padding: 4rem 3rem 3rem;
+    }
+}
+
+@media screen and (min-width: 60rem) {
+    .page__main {
+        padding: 0 10%;
+    }
+}
+
+@media screen and (min-width: 80rem) {
+    .page__main {
+        padding: 0 20%;
+    }
+}

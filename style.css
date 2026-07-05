@@ -141,14 +141,14 @@ input[type="checkbox"] {
     left: auto; right: var(--spacing);
 }
 
-.toggle__label-sm {
+.toggle__label_size_sm {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 1px;
     color: hsl(227 4% 48%);
 }
 
-.toggle__label-lg {
+.toggle__label_size_lg {
     font-size: 1rem;
     color: hsl(220 6% 28%);
 }

@@ -15,7 +15,7 @@
     
     <!-- SCRIPTS -->
     <script src="index.js" defer></script>
-    
+
     <title>Library | The Odin Project</title>
 </head>
 <body class="page">
@@ -52,7 +52,7 @@
                 </div>
                 <div class="toggle form__toggle">
                     <input type="checkbox" name="read" id="read" class="toggle__btn toggle__btn_name_read">
-                    <label for="read" class="toggle__label-lg">
+                    <label for="read" class="toggle__label toggle__label_size_lg">
                         I have read this book
                     </label>
                 </div>
@@ -69,5 +69,22 @@
             </form>
         </dialog>
     </main>
+    <template id="card-template">
+        <article class="card">
+            <h2 class="card__title"></h2>
+            <p class="card__author"></p>
+            <div class="card__actions">
+                <div class="toggle">
+                    <input type="checkbox" class="toggle__btn">
+                    <label class="toggle__label toggle__label_size_sm">
+                        MARK AS READ
+                    </label>
+                </div>
+                <button class="btn btn_type_icon btn_label_delete">
+                    <img src="images/delete.svg" alt="Delete" class="btn__icon btn__icon_size_lg">
+                </button>
+            </div>
+        </article>
+    </template>
 </body>
 </html>

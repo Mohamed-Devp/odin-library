@@ -69,6 +69,18 @@ function saveToStorage() {
     localStorage.setItem("library", libraryStr);
 }
 
+function loadFromStorage() {
+    const libraryStr = localStorage.getItem("library");
+    const libraryObjs = libraryStr ? JSON.parse(libraryStr) : [];
+
+    libraryObjs.forEach(obj => {
+        const book = new Book(obj.id, obj.title, obj.author, obj.read);
+        library.push(book);
+
+        renderCard(book);
+    });
+}
+
 addBookForm.addEventListener("submit", () => {
     const title = titleInp.value;
     const author = authorInp.value;
@@ -78,3 +90,5 @@ addBookForm.addEventListener("submit", () => {
 
     addBookForm.reset();
 });
+
+loadFromStorage();

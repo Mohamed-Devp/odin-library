@@ -18,6 +18,7 @@ function Book(id, title, author, read) {
 
 Book.prototype.toggleRead = function() {
     this.read = !this.read;
+    saveToStorage();
 }
 
 function renderCard(book) {
@@ -46,6 +47,7 @@ function renderCard(book) {
         library = library.filter(libraryBook => {
             return libraryBook.id !== book.id;
         });
+        saveToStorage();
 
         cards.removeChild(card);
     });
@@ -57,8 +59,14 @@ function addBookToLibrary(title, author, read) {
     const book = new Book(crypto.randomUUID(), title, author, read);
 
     library.push(book);
+    saveToStorage();
 
     renderCard(book);
+}
+
+function saveToStorage() {
+    const libraryStr = JSON.stringify(library);
+    localStorage.setItem("library", libraryStr);
 }
 
 addBookForm.addEventListener("submit", () => {
